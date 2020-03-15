@@ -1,6 +1,6 @@
 # ReactTableCC
 
-![Скриншот](https://github.com/SLKarol/data-table-cc-react/raw/master/screenshots/screenshot.PNG)
+![Скриншот](https://github.com/SLKarol//raw/master/screenshots/screenshot.PNG)
 
 Компонент написан для работы-показа табличных данных. Посмотрел несколько проектов и решил написать свою компоненту :-).\
 Задумка такая: Выводить табличные данные не в таблице, а в css-grid, причём не стеснять программиста в возможностях, как отображать данные.
@@ -74,10 +74,10 @@ const ON_CONTROL_COLUMNS = [
 ];
 const sorted = [{ id: 'date', desc: 'asc' }];
 
-<DataTable data={ON_CONTROL_DATA}	columns={ON_CONTROL_COLUMNS} sorted={sorted}>
-	<DataTable.Header />
-	<DataTable.Body />
-	<DataTable.Footer className="th-test">Тестовая таблица</DataTable.Footer>
+<DataTable data={ON_CONTROL_DATA} columns={ON_CONTROL_COLUMNS} sorted={sorted}>
+  <DataTable.Header />
+  <DataTable.Body />
+  <DataTable.Footer className="th-test">Тестовая таблица</DataTable.Footer>
 </DataTable>
 ```
 
