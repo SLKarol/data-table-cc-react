@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5em;
+  width: 1200px;
+  height: 600px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.icon--rotate180 {
+  transform: rotate(180deg);
+}
+.icon--gray {
+  fill: rgba(0, 0, 0, 0.5);
+}
+
+.icon--active {
+  fill: #137085;
+}
+
+.icon--rotate90 {
+  transform: rotate(90deg);
+}
+
+.icon--rotate-90 {
+  transform: rotate(-90deg);
+}

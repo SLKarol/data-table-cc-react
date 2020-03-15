@@ -1,0 +1,143 @@
+﻿.data-table {
+  display: grid;
+  grid-row-gap: 10px;
+  align-items: stretch;
+  align-content: start;
+  grid-template-rows: 80px;
+}
+
+.data-table__th {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-right: 16px;
+  align-self: center;  
+}
+.data-table__th:first-child {
+  padding-left: 21px;
+}
+
+.data-table__td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  background-color: #FFFFFF;
+  padding-right: 16px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.data-table__td--first {
+  padding-left: 21px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.data-table__td--last {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.data-table__td--gray {
+  line-height: 15px;
+  color: #888;
+}
+
+.data-table--height-small {
+  height: 240px;
+}
+
+.data-table__th--sortable {
+  display: grid;
+  grid-template-columns: 1fr 7px;
+  grid-column-gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.data-table__sort-icons {
+  display: grid;
+  align-items: stretch;
+  grid-row-gap: 2px;
+  align-content: center;
+}
+
+.data-table__button--order {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+}
+.data-table__header-svg {
+  width: 7px;
+  height: 7px;
+}
+
+.data-table__icon--asc {
+  vertical-align: bottom;
+}
+
+.data-table__icon--desc {
+  vertical-align: top;
+}
+
+.data-table__td--bold {
+  font-weight: bold;
+}
+
+.data-table__thead {
+  grid-template-rows: 50px;
+}
+
+.data-table__footer {
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  padding: 17px 15px 17px 0;
+  white-space: nowrap;
+}
+
+.data-table__paging-button {
+	height: 30px;
+	width: 30px;
+	padding: 5.5px 15px;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #137085;
+	border: 1px solid rgba(19, 112, 133, .5);
+	border-radius: 2px;
+	outline: none;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+}
+
+.data-table__paging-button--active {
+  border: none;
+  background-color: rgba(19, 112, 133, 0.1);
+}
+
+.data-table__paging-dots {
+  color: #137085;
+  margin-right: 10px;
+}
+
+.data-table__th--center {
+  text-align: center;
+}

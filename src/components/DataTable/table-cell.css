@@ -1,0 +1,16 @@
+.table_cell__state-with-icon {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  grid-column-gap: 2px;
+}
+
+.table_cell__l20 {
+  line-height: 20px;
+}
+
+.table_cell__two-vert-blocks {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-row-gap: 3px;
+}
+
