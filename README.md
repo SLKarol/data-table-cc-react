@@ -1,6 +1,6 @@
 # ReactTableCC
 
-![Скриншот](https://github.com/SLKarol//raw/master/screenshots/screenshot.PNG)
+![Скриншот](https://github.com/SLKarol/data-table-cc-react/raw/master/screenshots/screenshot.PNG)
 
 Компонент написан для работы-показа табличных данных. Посмотрел несколько проектов и решил написать свою компоненту :-).\
 Задумка такая: Выводить табличные данные не в таблице, а в css-grid, причём не стеснять программиста в возможностях, как отображать данные.
