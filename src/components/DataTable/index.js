@@ -71,27 +71,32 @@ DataTable.Header = function Header({ className, onSortedChange }) {
 
 /**
  * Компонент строк с данными
- * @param {Object} param0
+ * @param {Object} props
+ * @param {string} props.className CSS-класс для табилцы
  */
 DataTable.Body = function Body({ className }) {
 	const { columns, data, gridTemplateColumns, classNameDataTable } = useContext(
 		DataTableContext
 	);
 	const Content = data.map(row => (
-		<TRow key={row.id} row={row} columns={columns} className={className} />
+		<TRow
+			key={row.id}
+			row={row}
+			columns={columns}
+			className={className}
+			styleRow={gridTemplateColumns}
+		/>
 	));
 	return (
 		<ContainerWithScroll>
-			<div className={classNameDataTable} style={{ gridTemplateColumns }}>
-				{Content}
-			</div>
+			<div className={classNameDataTable}>{Content}</div>
 		</ContainerWithScroll>
 	);
 };
 
 /**
  * Компонент подвала таблицы. Для отрисовки пейджинга, например.
- * @param {Object} param0
+ * @param {Object} props
  */
 DataTable.Footer = function Footer({
 	className = 'data-table__footer',

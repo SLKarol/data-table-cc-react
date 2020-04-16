@@ -3,9 +3,12 @@ import TD from './TD';
 
 /**
  * Компонент строки данных даблицы
- * @param {Object} param0
+ * @param {Object} props
+ * @param {object} props.row Строка в таблице
+ * @param {Array} props.columns Массив колонок в строке
+ * @param {object} props.styleRow Стиль для строки
  */
-function TRow({ row, columns }) {
+function TRow({ row, columns, styleRow }) {
 	const Content = useMemo(
 		() =>
 			columns.map(({ id, Render, className = '' }, idx) => {
@@ -25,7 +28,11 @@ function TRow({ row, columns }) {
 			}),
 		[row, columns]
 	);
-	return <>{Content}</>;
+	return (
+		<div className="data-table__row" style={{ styleRow }}>
+			{Content}
+		</div>
+	);
 }
 
 export default TRow;

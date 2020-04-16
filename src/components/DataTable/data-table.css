@@ -141,3 +141,10 @@
 .data-table__th--center {
   text-align: center;
 }
+
+.data-table__row {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: stretch;
+  align-content: start;
+}
