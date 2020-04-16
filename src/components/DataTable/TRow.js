@@ -6,9 +6,10 @@ import TD from './TD';
  * @param {Object} props
  * @param {object} props.row Строка в таблице
  * @param {Array} props.columns Массив колонок в строке
- * @param {object} props.styleRow Стиль для строки
+ * @param {string} props.className CSS-класс блока строки данных
+ * @param {string} props.gridTemplateColumns Значение grid-template-columns для блока строки
  */
-function TRow({ row, columns, styleRow }) {
+function TRow({ row, columns, className, gridTemplateColumns }) {
 	const Content = useMemo(
 		() =>
 			columns.map(({ id, Render, className = '' }, idx) => {
@@ -29,7 +30,7 @@ function TRow({ row, columns, styleRow }) {
 		[row, columns]
 	);
 	return (
-		<div className="data-table__row" style={{ styleRow }}>
+		<div className={className} style={{ gridTemplateColumns }}>
 			{Content}
 		</div>
 	);

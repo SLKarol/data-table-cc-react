@@ -10,7 +10,10 @@ const DataTableContext = createContext();
 
 /**
  * Компонент "Таблица с данными"
- * @param {Object} params
+ * @param {Object} props
+ * @param {Array} props.data Массив данных
+ * @param {Array} props.columns Массив настроек для колонок таблицы,- заголовки и вывод. Описание свойств объекта см. README.md
+ * @param {Array} props.sorted Массив отсортированных колонок. См. README.md
  */
 export default function DataTable({
 	data,
@@ -37,7 +40,9 @@ export default function DataTable({
 
 /**
  * Компонент строки заголовков таблицы
- * @param {Object} param0
+ * @param {Object} props
+ * @param {string} props.className CSS класс для колонки-заголовка. Аналогично понятию "Класс для тэга TH"
+ * @param {Function} props.onSortedChange Обработчик изменения сортировки
  */
 DataTable.Header = function Header({ className, onSortedChange }) {
 	const {
@@ -74,7 +79,7 @@ DataTable.Header = function Header({ className, onSortedChange }) {
  * @param {Object} props
  * @param {string} props.className CSS-класс для табилцы
  */
-DataTable.Body = function Body({ className }) {
+DataTable.Body = function Body({ className = 'data-table__row' }) {
 	const { columns, data, gridTemplateColumns, classNameDataTable } = useContext(
 		DataTableContext
 	);
@@ -84,7 +89,7 @@ DataTable.Body = function Body({ className }) {
 			row={row}
 			columns={columns}
 			className={className}
-			styleRow={gridTemplateColumns}
+			gridTemplateColumns={gridTemplateColumns}
 		/>
 	));
 	return (
@@ -97,6 +102,7 @@ DataTable.Body = function Body({ className }) {
 /**
  * Компонент подвала таблицы. Для отрисовки пейджинга, например.
  * @param {Object} props
+ * @param {string} props.className CSS-класс блока
  */
 DataTable.Footer = function Footer({
 	className = 'data-table__footer',
