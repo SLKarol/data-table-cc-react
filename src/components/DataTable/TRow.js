@@ -29,8 +29,9 @@ function TRow({ row, columns, className, gridTemplateColumns }) {
 			}),
 		[row, columns]
 	);
+	const id = row.hasOwnProperty('id') ? row.id : new Date().getTime();
 	return (
-		<div className={className} style={{ gridTemplateColumns }}>
+		<div className={className} style={{ gridTemplateColumns }} data-id-row={id}>
 			{Content}
 		</div>
 	);
