@@ -83,7 +83,7 @@ DataTable.Body = function Body({ className = 'data-table__row' }) {
 	const { columns, data, gridTemplateColumns, classNameDataTable } = useContext(
 		DataTableContext
 	);
-	const Content = data.map(row => (
+	const Content = data.map((row) => (
 		<TRow
 			key={row.id}
 			row={row}

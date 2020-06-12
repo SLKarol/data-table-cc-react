@@ -5,7 +5,7 @@ import { ReactComponent as Arrow } from 'img/arrow-up.svg';
  * Изображает значки сортировки
  */
 export default function SortableIcons({ onClick, columnName, sortedTable }) {
-	const sortThisColumn = sortedTable.find(s => s.id === columnName);
+	const sortThisColumn = sortedTable.find((s) => s.id === columnName);
 	const orderSort = sortThisColumn ? sortThisColumn.desc : 'desc';
 	return (
 		<div className="data-table__sort-icons">

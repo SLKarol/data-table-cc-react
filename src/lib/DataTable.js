@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
  * Генерирует значение grid-template-columns
  * @param {Array} columns Настройки колонок
  */
-const generateGridTemplateColumns = columns => {
+const generateGridTemplateColumns = (columns) => {
 	const cols = columns.reduce((str, col) => {
 		const widthCol = 'width' in col ? `${col.width}px ` : '1fr ';
 		return str + widthCol;
@@ -39,7 +39,7 @@ export function useGenerateTemplateColumns(columns) {
  */
 export function useHandleChangeSort(onSortedChange) {
 	const handleChangeSort = useCallback(
-		e => {
+		(e) => {
 			if (onSortedChange) {
 				//--- Получить data-атрибуты сортировки
 				const { columnName, columnSortOrder, columnSortable } = Object.assign(
@@ -57,7 +57,7 @@ export function useHandleChangeSort(onSortedChange) {
 	return handleChangeSort;
 }
 
-const updaterSorting = value => (value === 'desc' ? 'asc' : 'desc');
+const updaterSorting = (value) => (value === 'desc' ? 'asc' : 'desc');
 
 /**
  *
