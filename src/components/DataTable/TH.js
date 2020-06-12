@@ -2,22 +2,38 @@ import React from 'react';
 import SortableIcons from './SortableIcons';
 
 /**
- * Компонент ячейки заголовка таблицы
- * @param {Object} params
+ * @memberof DataTable
+ * @method TH
+ * @description Компонент ячейки заголовка таблицы
+ * @param {Object} props
+ * @param {any} props.children Заголовок. Может быть текстом или компонентой
+ * @param {string} props.className Класс для заголовка
+ * @param {boolean} props.sortable Колонка сортируется?
+ * @param {Function} props.handleSortChange Обработчик сортировки колонки
+ * @param {string} props.columnName Название колонки
+ * @param {Array} props.sortedTable Как отсортирована таблица
+ * @param {string} props.classNameHeader Добавочный css-класс к заголовку таблицы
+ * @param {string} props.classNameSortable Класс для заголовка колонки у которой есть сортировка
  */
 function TH({
-	children, //--- Заголовок. Может быть текстом или компонентой
-	className = 'data-table__th', //--- Класс для заголовка
-	sortable = false, //--- Колонка сортируется?
-	handleSortChange, //--- Обработчик сортировки колонки
-	columnName, //--- Название колонки
-	sortedTable, //--- Как отсортирована таблица
+	children,
+	className = 'data-table__th',
+	classNameSortable = 'data-table__th--sortable',
+	sortable = false,
+	handleSortChange,
+	columnName,
+	sortedTable,
+	classNameHeader = '',
 }) {
-	const Content = typeof children === 'string' ? children : children();
-	const thClassName = `${className} ${
-		sortable ? 'data-table__th--sortable' : ''
+	//TODO: Проверить в работе, что тут сделано, в README описать
+	const isString = typeof children === 'string';
+	const Content = isString
+		? children
+		: children({ columnName, sortable, sorted: sortedTable, handleSortChange });
+	const thClassName = `${className} ${classNameHeader} ${
+		sortable ? classNameSortable : ''
 	}`;
-
+	//--- Показать дефолтные значки сортировки, если заголовок -строка И поле сортируется
 	return (
 		<div
 			className={thClassName}
@@ -26,7 +42,7 @@ function TH({
 			onClick={handleSortChange}
 		>
 			{Content}
-			{sortable && (
+			{isString && sortable && (
 				<SortableIcons
 					onClick={handleSortChange}
 					columnName={columnName}
