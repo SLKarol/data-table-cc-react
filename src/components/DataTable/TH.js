@@ -25,7 +25,6 @@ function TH({
 	sortedTable,
 	classNameHeader = '',
 }) {
-	//TODO: Проверить в работе, что тут сделано, в README описать
 	const isString = typeof children === 'string';
 	const Content = isString
 		? children

@@ -6,7 +6,7 @@ export const ON_CONTROL_COLUMNS = [
 	{
 		id: 'mo',
 		Header: 'MO',
-		width: 152,
+		width: '18%',
 		className: 'data-table__td--gray',
 	},
 	{

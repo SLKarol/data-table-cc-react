@@ -122,6 +122,13 @@ export function useHandlerClickOnDataTable(setting) {
 				}, timeOutBetweenClick);
 			}
 		},
-		[setting]
+		[
+			onClick,
+			onDoubleClick,
+			timeOutBetweenClick,
+			timeOutSetting.idRow,
+			timeOutSetting.started,
+			timeOutSetting.timerId,
+		]
 	);
 }
